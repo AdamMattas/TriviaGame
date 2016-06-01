@@ -6,7 +6,14 @@ $(document).ready(function(){
 	var questions = [
 		["What was the name of Homer's motorcycle gang?", "The Christ Punchers", "The Hell's Satans", "The Fat Boys", "2", vid1],
 		["What is Principal Skinner's real name?", "Armin Tamzarian", "Skip Rhodes", "Hans Moleman", "1", vid2],
-		["What was Lisa's nickname at school when she pretended to be a boy in order to attend the boys only classes?", "Skid Mark", "Toilet", "Brain Boy", "2", vid3]
+		["What was Lisa's nickname at school when she pretended to be a boy in order to attend the boys only classes?", "Skid Mark", "Toilet", "Brain Boy", "2", vid3],
+		['In the Treehouse of Horror episode "The Devil and Homer Simpson", Homer states that he would sell his soul for a doughnut. Which character appears as The Devil to seal the deal?', "Mr. Burns", "Sideshow Bob", "Ned Flanders", "3", vid4],
+		["When Bart was prescribed the drug Focusyn for his A.D.D., what kind of fruit did he put in his pants and say that his testicles wouldn't fit in his underwear?", "Oranges", "Apples", "Peaches", "1", vid5],
+		["When the Simpson family went to Florida during spring break, how many boobs did Homer tell Marge that he saw?", "15", "20", "12", "1", vid6],
+		["When Homer and Mel Gibson were on the run from film studio executives, what plan did Homer and Mel use to end the pursuit?", "Hold Mel Gibson hostage.", "Hide in the doughnut shop.", "Moon them until they could take no more.", "3", vid7],
+		["When Lisa was babysitting Rod & Todd Flanders, what was the bedtime story she told them about?", "Anointing the feet of Jesus", "Imagination Christmas", "Two robots named Rod & Todd", "3", vid8],
+		["Where did Ralph Wiggum find a moon rock?", "On the moon", "In his nose", "In the backyard", "2", vid9],
+		[""]
 	];
 	var gameTimer = {
     time:30,
