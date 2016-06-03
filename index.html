@@ -16,21 +16,53 @@
 
 <body>
 
-	<video id="video1" class="viewScreen">
-		<source src="assets/video/introSmall.mp4" type="video/mp4">
-	</video>
+	<!-- Added audio -->
+	<audio id="doh" src="assets/audio/doh.wav" type="audio/wav"></audio>
+	<audio id="woohoo" src="assets/audio/woohoo.wav" type="audio/wav"></audio>
 
-	<div id="display">30</div>
+	<div class="main-wrap">
 
-	<div id="triviaStatus"></div>
+		<div class="vid-wrap">
 
-	<div id="trivia"></div>
+			<div id="questionBack" class="question-back">
+				<div id="trivia" class="trivia-question"></div>
+				<div id="triviaStatus"></div>
+			</div>
 
-	<div id="choice1" class="choices" value="1"></div>
-	<div id="choice2" class="choices" value="2"></div>
-	<div id="choice3" class="choices" value="3"></div>
+			<video id="video1" class="viewScreen hide">
+				<source src="assets/video/hells_satans.mp4" type="video/mp4">
+			</video>
 
-	<div id="start" class="new">Start Game</div>
+			<video id="video2" class="viewScreen hide">
+				<source src="assets/video/simpsons_intro.mp4" type="video/mp4">
+			</video>
+
+			<img id="img1" class="imgScreen hide">
+
+		</div>
+
+			<!-- Begin full screen background wrapper -->
+		<div class="back-pic">
+
+			<img class="logo" src="assets/images/logo.png">
+			<div id="start" class="start-button"></div>
+			<div id="display" class="numbers"></div>
+			<div class="timer"></div>
+			<div class="header"></div>
+
+			<div id="correct" class="correct-answer"></div>
+			<div id="incorrect" class="incorrect-answer"></div>
+
+			<div id="answers" class="answer-container">
+				<h1 class="choose">Choose Your Answer</h1>
+				<div id="choice1" class="choices" value="1"></div>
+				<div id="choice2" class="choices" value="2"></div>
+				<div id="choice3" class="choices" value="3"></div>
+			</div>
+
+		</div>
+
+	</div>
 
 	<!-- Added link to the Javascript file -->
 	<script src="assets/javascript/app.js"></script>
