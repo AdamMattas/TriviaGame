@@ -2,16 +2,17 @@
 	//Initialize global variables
 	var doh = $('#doh')[0];
 	var woohoo = $('#woohoo')[0];
-	var vid1 = document.getElementById("video2");
+	var vid0 = document.getElementById("video0");
+	var vid1 = document.getElementById("video1");
 	var vid2 = document.getElementById("video2");
-	var vid3 = document.getElementById("video2");
-	var vid4 = document.getElementById("video2");
-	var vid5 = document.getElementById("video2");
-	var vid6 = document.getElementById("video2");
-	var vid7 = document.getElementById("video2");
-	var vid8 = document.getElementById("video2");
-	var vid9 = document.getElementById("video2");
-	var vid10 = document.getElementById("video2");
+	var vid3 = document.getElementById("video3");
+	var vid4 = document.getElementById("video4");
+	var vid5 = document.getElementById("video5");
+	var vid6 = document.getElementById("video6");
+	var vid7 = document.getElementById("video7");
+	var vid8 = document.getElementById("video8");
+	var vid9 = document.getElementById("video9");
+	var vid10 = document.getElementById("video10");
 	//organize questions and possible answers and answer videos in object
 	var pos = 0, trivia, triviaStatus, question, choice, choices, ch1, ch2, ch3, counter;
 	var correct = 0;
@@ -30,12 +31,12 @@
 	];
 $(document).ready(function(){
 	$('#questionBack').addClass('hide');
-	$(vid1).removeClass('hide');
-	vid1.play();
-	$(vid1).bind('ended', function() {
-		$(vid1).addClass('hide');
-		$('#img1').removeClass('hide');
+	$(vid0).removeClass('hide');
+	vid0.play();
+	$(vid0).bind('ended', function() {
+		$(vid0).addClass('hide');
 		$('#questionBack').removeClass('hide');
+		$('#img1').removeClass('hide');
 	});
 	//game timer object functions
 	//set initial time and reset to initial time
@@ -79,6 +80,7 @@ $(document).ready(function(){
 
 	function showQuestion(){
 		//check if game is over and display the score and show button to restart the game
+		$('#img1').addClass('hide');
 		if(pos >= questions.length){
 			$('#answers').animate({bottom: '-300px'});
 			$('#start').fadeIn("slow");
