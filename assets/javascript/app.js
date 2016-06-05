@@ -1,4 +1,3 @@
-
 	//Initialize global variables
 	var doh = $('#doh')[0];
 	var woohoo = $('#woohoo')[0];
@@ -29,7 +28,11 @@
 		["Where did Ralph Wiggum find a moon rock?", "On the moon", "In his nose", "In the backyard", "2", vid9],
 		["When Homer received counterfeit tickets to the Super Bowl, what did they turn out to be printed on?", "Toilet Paper", "Crackers", "Parking tickets", "2", vid10]
 	];
+
+// jQuery wrapped in doc ready function
 $(document).ready(function(){
+
+	//plays intro video and sets classes on for trivia screen
 	$('#questionBack').addClass('hide');
 	$(vid0).removeClass('hide');
 	vid0.play();
@@ -84,19 +87,18 @@ $(document).ready(function(){
 		if(pos >= questions.length){
 			$('#answers').animate({bottom: '-300px'});
 			$('#start').fadeIn("slow");
-			$('#trivia').html("<h2>You got "+correct+" of "+questions.length+" questions correct</h2>");
+			$('#trivia').html("<h2>You guessed "+correct+" of "+questions.length+" questions correct</h2>");
 			$('#triviaStatus').html('Simpsons Trivia Completed');
 			pos = 0;
 			correct = 0;
 			incorrect = 0;
 		}else{
-			//make sure timer is ready for a new game
+			//make sure timer is ready for a new question
 			gameTimer.stop();
 			gameTimer.reset();
 			gameTimer.start();
 			$('#answers').animate({bottom: '0px'});
-			//select question by the pos variable
-			$('#triviaStatus').html("Question "+(pos+1)+" of "+questions.length);
+			//select question by the pos variable and populate possible answers
 			question = questions[pos][0];
 			ch1 = questions[pos][1];
 			ch2 = questions[pos][2];
@@ -108,6 +110,9 @@ $(document).ready(function(){
 		}
 	};
 
+	// runs when time is up without answer selection
+	// displays incorrect count & plays video before moving to next question
+	// unbind added to video end event listener to prevent multiple pos increments
 	function skipQuestion(){
 		$('#answers').animate({bottom: '-300px'});
 		incorrect++;
@@ -127,14 +132,17 @@ $(document).ready(function(){
 			showQuestion();
 		});
 
-		//showQuestion();
 	};
 
 	//check if guess is correct and record correct and incorrect guesses
+	// displays score count & plays video before moving to next question
+	// unbind added to video end event listener to prevent multiple pos increments
 	$('.choices').on('click', function(){
 		$('#answers').animate({bottom: '-300px'});
 		guess = $(this).attr('value');
+		//check if guess is correct
 		if(guess == questions[pos][4]){
+			//update and animate score count and play success sound
 			correct++;
 			$('#correct').html('<span class="correct-num">Correct &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + correct + '</span>');
 			$('#correct').animate({left: '-50px'});
@@ -142,6 +150,8 @@ $(document).ready(function(){
 			gameTimer.stop();
 			$('#questionBack').addClass('hide');
 			$(questions[pos][5]).removeClass('hide');
+			//play video and listen for end of video
+			//when video ends it hides and the score counter slides back
 			questions[pos][5].play();
 			$(questions[pos][5]).bind('ended', function() {
 				$(questions[pos][5]).unbind('ended');
@@ -149,9 +159,11 @@ $(document).ready(function(){
 				$('#questionBack').removeClass('hide');
 				pos++;
 				$('#correct').animate({left: '-225px'});
+				// move to next question
 				showQuestion();
 			});
 		}else{
+			//update and animate score count and play fail sound
 			incorrect++;
 			$('#incorrect').html('<span class="correct-num">Incorrect &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + incorrect + '</span>');
 			$('#incorrect').animate({left: '-50px'});
@@ -159,6 +171,8 @@ $(document).ready(function(){
 			gameTimer.stop();
 			$('#questionBack').addClass('hide');
 			$(questions[pos][5]).removeClass('hide');
+			//play video and listen for end of video
+			//when video ends it hides and the score counter slides back
 			questions[pos][5].play();
 			$(questions[pos][5]).bind('ended', function() {
 				$(questions[pos][5]).unbind('ended');
@@ -166,15 +180,10 @@ $(document).ready(function(){
 				$('#questionBack').removeClass('hide');
 				pos++;
 				$('#incorrect').animate({left: '-225px'});
+				// move to next question
 				showQuestion();
 			});
 		}	
 	});
 
 });
-
-//if no answer is chosen and timer runs out, the correct answer is displayed
-
-//check to see if all questions have been asked and if game is over
-
-//automatically select a new question and restart the timer

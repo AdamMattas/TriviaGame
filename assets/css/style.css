@@ -20,6 +20,16 @@ h1{
   font-weight: bold;
 }
 
+h2{
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
 h3{ 
   display: block;
   font-size: 1.17em;
@@ -34,8 +44,8 @@ h3{
 .hide{
 	display: none;
 }
-/*end reusable display classes*/
 
+/*begin header, start button, and timer*/
 .logo{
 	position: absolute;
 }
@@ -83,13 +93,9 @@ h3{
 	height: 47px;
 	background-color: #000000;
 }
+/*end header, start button, and timer*/
 
-.correct-num{
-	float: right;
-	color: #FFFFFF;
-	font-size: 32px;
-}
-
+/*begin score display*/
 .correct-answer{
 	position: absolute;
 	top: 150px;
@@ -118,6 +124,13 @@ h3{
 	font-size: 32px;
 }
 
+.correct-num{
+	float: right;
+	color: #FFFFFF;
+	font-size: 32px;
+}
+/*end score display*/
+
 /*main background image*/
 .back-pic{
 	position: relative;
@@ -138,11 +151,13 @@ h3{
   height: 100%;
 }
 
+/*wrappers*/
 .vid-wrap{
 	width: 100%;
 	height: 100%;
 }
 
+/*begin display area for questions and videos*/
 .viewScreen{
 	position: absolute;
 	top: 0;
@@ -185,6 +200,14 @@ h3{
 	line-height: 40px;
 }
 
+.trivia-status{
+	text-align: center;
+	margin-top: 100px;
+	color: #FFFFFF;
+	font-size: 32px;
+}
+/*end display area for questions and videos*/
+
 .new{
 	margin-top: 200px;
 	width: 100px;
@@ -193,6 +216,7 @@ h3{
 	text-align: center;
 }
 
+/*begin answer choices*/
 .choose{
 	color: #FFFFFF;
 	text-align: center;
@@ -226,3 +250,4 @@ h3{
 	text-align: center;
 	cursor: pointer;
 }
+/*end answer choices*/

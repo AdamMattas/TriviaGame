@@ -20,15 +20,18 @@
 	<audio id="doh" src="assets/audio/doh.wav" type="audio/wav"></audio>
 	<audio id="woohoo" src="assets/audio/woohoo.wav" type="audio/wav"></audio>
 
+	<!-- begin page wrapper -->
 	<div class="main-wrap">
 
 		<div class="vid-wrap">
 
+			<!-- question area for trivia and end game stats -->
 			<div id="questionBack" class="question-back">
 				<div id="trivia" class="trivia-question"></div>
-				<div id="triviaStatus"></div>
+				<div id="triviaStatus" class="trivia-status"></div>
 			</div>
 
+			<!-- begin videos -->
 			<video id="video0" class="viewScreen hide">
 				<source src="assets/video/simpsons_intro.mp4" type="video/mp4">
 			</video>
@@ -72,33 +75,42 @@
 			<video id="video10" class="viewScreen hide">
 				<source src="assets/video/super_bowl.mp4" type="video/mp4">
 			</video>
+			<!-- end videos -->
 
+			<!-- simpsons intro photo -->
 			<img id="img1" class="imgScreen hide">
 
 		</div>
 
-			<!-- Begin full screen background wrapper -->
+		<!-- Begin full screen background wrapper -->
 		<div class="back-pic">
 
+			<!-- begin header bar content -->
 			<img class="logo" src="assets/images/logo.png">
 			<div id="start" class="start-button"></div>
 			<div id="display" class="numbers"></div>
 			<div class="timer"></div>
 			<div class="header"></div>
+			<!-- end header bar content -->
 
+			<!-- animated score display -->
 			<div id="correct" class="correct-answer"></div>
 			<div id="incorrect" class="incorrect-answer"></div>
 
+			<!-- begin answer container -->
 			<div id="answers" class="answer-container">
 				<h1 class="choose">Choose Your Answer</h1>
 				<div id="choice1" class="choices" value="1"></div>
 				<div id="choice2" class="choices" value="2"></div>
 				<div id="choice3" class="choices" value="3"></div>
 			</div>
+			<!-- end answer container -->
 
 		</div>
+		<!-- end full screen background wrapper -->
 
 	</div>
+	<!-- end page wrapper -->
 
 	<!-- Added link to the Javascript file -->
 	<script src="assets/javascript/app.js"></script>
