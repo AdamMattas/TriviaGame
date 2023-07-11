@@ -76,7 +76,6 @@ $(document).ready(function () {
 	//checks for click to start a new game
 	$(document).on('click', '#begin-game', function () {
 		showFirstQuestion();
-		// $('#img1').addClass('hide');
 		$('#begin-game').fadeOut("slow");
 		$('#answers').animate({ bottom: '0px' });
 	});
@@ -91,7 +90,6 @@ $(document).ready(function () {
 
 	function showFirstQuestion() {
 		$('#questionBack').removeClass('hide');
-		// $('#img1').removeClass('hide');
 		$('#img-intro').addClass('hide');
 		showQuestion();
 	};
@@ -101,7 +99,7 @@ $(document).ready(function () {
 		$('#img1').addClass('hide');
 		if (pos >= questions.length) {
 			$('#answers').animate({ bottom: '-300px' });
-			$('#next-question').fadeIn("slow");
+			$('#begin-game').fadeIn("slow");
 			$('#trivia').html("<h2>You guessed " + correct + " of " + questions.length + " questions correct</h2>");
 			$('#triviaStatus').html('Simpsons Trivia Completed');
 			pos = 0;

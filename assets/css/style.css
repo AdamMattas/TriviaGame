@@ -58,6 +58,7 @@ h3 {
   width: 87px;
   height: 90px;
   z-index: 100;
+  cursor: pointer;
 }
 
 .start-button:hover {
