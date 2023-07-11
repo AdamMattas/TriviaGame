@@ -97,6 +97,7 @@ $(document).ready(function () {
 	function showQuestion() {
 		//check if game is over and display the score and show button to restart the game
 		$('#img1').addClass('hide');
+		$('#triviaStatus').html('');
 		if (pos >= questions.length) {
 			$('#answers').animate({ bottom: '-300px' });
 			$('#begin-game').fadeIn("slow");
