@@ -34,13 +34,13 @@ $(document).ready(function () {
 
 	//plays intro video and sets classes on for trivia screen
 	$('#questionBack').addClass('hide');
-	$(vid0).removeClass('hide');
-	vid0.play();
-	$(vid0).bind('ended', function () {
-		$(vid0).addClass('hide');
-		$('#questionBack').removeClass('hide');
-		$('#img1').removeClass('hide');
-	});
+	// $(vid0).removeClass('hide');
+	// vid0.play();
+	// $(vid0).bind('ended', function () {
+	// 	$(vid0).addClass('hide');
+	// 	$('#questionBack').removeClass('hide');
+	// 	$('#img1').removeClass('hide');
+	// });
 	//game timer object functions
 	//set initial time and reset to initial time
 	var gameTimer = {
@@ -74,19 +74,34 @@ $(document).ready(function () {
 	};
 
 	//checks for click to start a new game
-	$(document).on('click', '.start-button', function () {
-		showQuestion();
-		$('#img1').addClass('hide');
-		$('#start').fadeOut("slow");
+	$(document).on('click', '#begin-game', function () {
+		showFirstQuestion();
+		// $('#img1').addClass('hide');
+		$('#begin-game').fadeOut("slow");
 		$('#answers').animate({ bottom: '0px' });
 	});
+
+	//checks for click to go to next question
+	$(document).on('click', '#next-question', function () {
+		showQuestion();
+		$('#img1').addClass('hide');
+		$('#next-question').fadeOut("slow");
+		$('#answers').animate({ bottom: '0px' });
+	});
+
+	function showFirstQuestion() {
+		$('#questionBack').removeClass('hide');
+		// $('#img1').removeClass('hide');
+		$('#img-intro').addClass('hide');
+		showQuestion();
+	};
 
 	function showQuestion() {
 		//check if game is over and display the score and show button to restart the game
 		$('#img1').addClass('hide');
 		if (pos >= questions.length) {
 			$('#answers').animate({ bottom: '-300px' });
-			$('#start').fadeIn("slow");
+			$('#next-question').fadeIn("slow");
 			$('#trivia').html("<h2>You guessed " + correct + " of " + questions.length + " questions correct</h2>");
 			$('#triviaStatus').html('Simpsons Trivia Completed');
 			pos = 0;
